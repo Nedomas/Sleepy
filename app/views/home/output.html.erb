@@ -1,17 +1,23 @@
 <h1>Sleepy</h1>
 <p>
+<% i = 0 %>
 <% if @wake_result %>
 <em>Wake at times:</em><br>
 	<% @wake_result.each do |f| %>
-		<%= hour = f.to_int	%>:<%= min = ((f - hour)*60).round(0) %>
-		<br>
+	<span style="color:<%= cycle("#6EA25A", "#6EA25A", "#E89B34", "#E89B34", "#B24A3C", "#B24A3C", :name => "colors") %>">
+		<%= f.strftime("%H:%M") %> ..
+		</span>
 	<% end %>
+	<% reset_cycle("colors") %>
 <% else %>
 <em>Go to sleep at:</em><br>
 	<% @sleep_result.each do |f| %>
-		<%=	hour = f.to_int %>:<%=	min = ((f - hour)*60).round(0) %>
-		<br>
+		<span style="color:<%= cycle("#6EA25A", "#6EA25A", "#E89B34", "#E89B34", "#B24A3C", "#B24A3C", :name => "colors") -%>">
+		<%= f.strftime("%H:%M") %> ..
+		</span>
 	<% end %>
+	<% reset_cycle("colors") %>
+	<% reset_cycle("bold") %>
 <% end %>
 </p>
 <%= button_to 'Back', :back, :class => "btn btn-large btn-success" %>
