@@ -1,0 +1,13 @@
+<h1>Home#output</h1>
+<p>Find me in app/views/home/output.html.erb</p>
+<% if @wake_result %>
+Wake at times:
+	<% @wake_result.each do |f| %>
+		<%= hour = f.to_int	%>:<%= min = ((f - hour)*60).round(0) %>
+	<% end %>
+<% else %>
+Go to sleep at:
+	<% @sleep_result.each do |f| %>
+		<%=	hour = f.to_int %>:<%=	min = ((f - hour)*60).round(0) %>
+	<% end %>
+<% end %>

@@ -1,0 +1,11 @@
+<h1>Home#index</h1>
+<p>Find me in app/views/home/index.html.erb</p>
+
+<%= form_tag("home/output", :method => "get") do %>
+  <%= label_tag(:hour, "hour:") %>
+  <%= text_field_tag(:hour) %>
+  <%= label_tag(:minute, "minute:") %>
+  <%= text_field_tag(:minute) %>
+  <%= submit_tag("calculate") %>
+  <%= submit_tag("zzz") %>
+<% end %>

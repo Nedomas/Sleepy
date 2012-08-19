@@ -1,3 +1,4 @@
-== Sleepy application
+== Sleepy
 
-As found on on http://endlessly.herokuapp.com/
+Basic application for sleep time calculation, used in synergy with OS X Dashboard.
+Working version should be found at http://endlessly.herokuapp.com/
