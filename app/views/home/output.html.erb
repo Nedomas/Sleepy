@@ -1,13 +1,17 @@
-<h1>Home#output</h1>
-<p>Find me in app/views/home/output.html.erb</p>
+<h1>Sleepy</h1>
+<p>
 <% if @wake_result %>
-Wake at times:
+<em>Wake at times:</em><br>
 	<% @wake_result.each do |f| %>
 		<%= hour = f.to_int	%>:<%= min = ((f - hour)*60).round(0) %>
+		<br>
 	<% end %>
 <% else %>
-Go to sleep at:
+<em>Go to sleep at:</em><br>
 	<% @sleep_result.each do |f| %>
 		<%=	hour = f.to_int %>:<%=	min = ((f - hour)*60).round(0) %>
+		<br>
 	<% end %>
 <% end %>
+</p>
+<%= button_to 'Back', :back, :class => "btn btn-large btn-success" %>

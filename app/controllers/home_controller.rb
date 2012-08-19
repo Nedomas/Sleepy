@@ -1,4 +1,5 @@
 class HomeController < ApplicationController
+	respond_to :html, :js
 
   def index
   end
@@ -15,6 +16,10 @@ class HomeController < ApplicationController
   		end_min = params[:minute]
   		@sleep_result = calculate_from_end(end_hour, end_min)
   	end
+  	respond_to do |format|
+      format.html
+      format.js
+    end
   end
 
   def calculate_from_start(start_hour, start_min)
