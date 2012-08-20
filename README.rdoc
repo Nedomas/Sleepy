@@ -3,3 +3,8 @@
 Application for perfect sleep time calculation. Best served cold and used in synergy with OS X Dashboard.
 Working version can be found at http://endlessly.herokuapp.com
 
+== To Do
+
+* Time from inputs validation
+* Animated AJAX
+
