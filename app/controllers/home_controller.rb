@@ -35,7 +35,7 @@ class HomeController < ApplicationController
   def calculate_from_now
   	rhythm = Array.new
   	rhythm = [1.5, 3, 4.5, 6, 7.5, 9]
-  	times = rhythm.collect { |x| Time.now.in_time_zone("Vilnius").advance(:hours => x) }
+  	times = rhythm.collect { |x| Time.now.in_time_zone("Vilnius").advance(:hours => x, :minutes => 14) }
   	return times.reverse
   end
 
@@ -44,7 +44,7 @@ class HomeController < ApplicationController
   	rhythm = [1.5, 3, 4.5, 6, 7.5, 9]
     end_time_in_seconds = (end_hour.to_i.hours + end_min.to_i.minutes)
     end_time = Time.at(end_time_in_seconds).utc
-  	times = rhythm.collect { |x| end_time.advance(:hours => -x) }
+  	times = rhythm.collect { |x| end_time.advance(:hours => -x, :minutes => -14) }
   	return times.reverse
   end
 end
