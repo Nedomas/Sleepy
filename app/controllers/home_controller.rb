@@ -24,6 +24,14 @@ class HomeController < ApplicationController
     end
   end
 
+  def clean
+    respond_to do |format|
+      format.js
+    end
+  end
+
+  private
+
   def calculate_from_now
   	rhythm = Array.new
   	rhythm = [1.5, 3, 4.5, 6, 7.5, 9]

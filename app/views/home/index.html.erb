@@ -1,10 +1,5 @@
 <h1>Sleepy</h1>
-<p>Specify wake time or go with knockout!</p>
+<div id="main">
+	<%= render :partial => "options" %>
+</div>
 
-<%= form_tag("home/output", :method => "get") do %>
-  <%= text_field_tag :hour, nil, :class => "span1", :placeholder => "hour" %>
-  <%= text_field_tag :minute, nil, :class => "span1", :placeholder => "minute" %>
-  <br>
-  <%= submit_tag "calculate", :class => "btn btn-primary btn-large" %>
-  <%= submit_tag "zzz", :class => "btn btn-info btn-mini" %>
-<% end %>
