@@ -6,5 +6,4 @@ Working version can be found at http://endlessly.heroku.com
 == To Do
 
 * Time from inputs validation
-* <s>Animated AJAX</s>
 
