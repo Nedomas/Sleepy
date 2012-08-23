@@ -1,10 +1,10 @@
 == Sleepy
 
 Application for perfect sleep time calculation. Best served cold and used in synergy with OS X Dashboard.
-Working version can be found at http://endlessly.herokuapp.com
+Working version can be found at http://endlessly.heroku.com
 
 == To Do
 
 * Time from inputs validation
-* Animated AJAX
+* <s>Animated AJAX</s>
 

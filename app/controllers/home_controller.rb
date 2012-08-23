@@ -15,7 +15,9 @@ class HomeController < ApplicationController
       if end_hour.empty? && end_min.empty?
         @wake_result = calculate_from_now
       else
-        @sleep_result = calculate_from_end(end_hour, end_min)
+        end_time_in_seconds = (end_hour.to_i.hours + end_min.to_i.minutes)
+        end_time = Time.at(end_time_in_seconds).utc
+        @sleep_result = calculate_from_end(end_time)
       end
   	end
   	respond_to do |format|
@@ -26,6 +28,7 @@ class HomeController < ApplicationController
 
   def clean
     respond_to do |format|
+      format.html
       format.js
     end
   end
@@ -39,11 +42,9 @@ class HomeController < ApplicationController
   	return times.reverse
   end
 
-  def calculate_from_end(end_hour, end_min)
+  def calculate_from_end(end_time)
   	rhythm = Array.new
   	rhythm = [1.5, 3, 4.5, 6, 7.5, 9]
-    end_time_in_seconds = (end_hour.to_i.hours + end_min.to_i.minutes)
-    end_time = Time.at(end_time_in_seconds).utc
   	times = rhythm.collect { |x| end_time.advance(:hours => -x, :minutes => -14) }
   	return times.reverse
   end

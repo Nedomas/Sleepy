@@ -1,1 +1,3 @@
-$('#main').html("<%= escape_javascript(render('result')) %>");
+$(function() {
+  $('#main').html("<%= escape_javascript(render('result')) %>").hide().fadeIn(100);
+});
