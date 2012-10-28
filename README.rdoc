@@ -5,5 +5,7 @@ Working version can be found at http://endlessly.heroku.com
 
 == To Do
 
-* Time from inputs validation
+* Time inputs validation
+* Add different timezone support
+* Add timer for sleep time left
 
